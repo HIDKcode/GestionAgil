@@ -7,4 +7,3 @@ DROP TABLE IF EXISTS precios_anteriores;
 DROP TABLE IF EXISTS piezas;
 DROP TABLE IF EXISTS proveedores;
 DROP TABLE IF EXISTS usuarios;
-DELETE FROM sqlite_sequence;
