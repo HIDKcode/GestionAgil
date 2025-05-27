@@ -1,30 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
     const isAuthenticated = localStorage.getItem('auth') === 'true';
+    const userRole = localStorage.getItem('rol');
     const currentPath = window.location.pathname;
     const currentPage = currentPath.split('/').pop().toLowerCase();
 
-    // Rutas permitidas sin login
-    const isLoginPath = currentPath.includes('/credenciales/');
-    const publicPages = ['login.html', 'registro.html'];
+    const isLoginPage = currentPath.includes('/credenciales/login.html');
 
-    if (!isAuthenticated && (!isLoginPath || !publicPages.includes(currentPage))) {
-        window.location.href = "../credenciales/login.html"; // subir desde /menu
+    // Páginas públicas sin protección
+    const publicPages = ['login.html'];
+
+    if (!isAuthenticated && !publicPages.includes(currentPage)) {
+        window.location.href = "/vistas/credenciales/login.html";
+        return;
+    }
+
+    // Protege admin.html solo para administradores
+    if (currentPage === 'admin.html' && userRole !== 'admin') {
+        alert("Acceso denegado: solo administradores");
+        window.location.href = "/vistas/menu/inventario.html"; // o cualquier otra vista válida
+        return;
     }
 });
 
-// Iniciar sesión desde login.html
+// Función de login (llamada desde login.html)
 function iniciarSesion(usuario, clave) {
+    let rol = '';
     if (usuario === 'admin' && clave === 'admin') {
-        localStorage.setItem('auth', 'true');
-        localStorage.setItem('usuario', usuario);
-        window.location.href = "../menu/inventario.html"; // ir al panel principal
+        rol = 'admin';
+    } else if (usuario === 'trabajador' && clave === 'trabajador') {
+        rol = 'trabajador';
     } else {
-        alert("Usuario o contraseña incorrectos");
+        alert("Credenciales inválidas");
+        return;
     }
+
+    localStorage.setItem('auth', 'true');
+    localStorage.setItem('usuario', usuario);
+    localStorage.setItem('rol', rol);
+
+    window.location.href = "/vistas/menu/inventario.html"; // Vista de entrada general
 }
 
+// Cerrar sesión
 function cerrarSesion() {
-    localStorage.removeItem('auth');
-    localStorage.removeItem('usuario');
-    window.location.href = "../credenciales/login.html";
+    localStorage.clear();
+    window.location.href = "/vistas/credenciales/login.html";
 }
