@@ -10,4 +10,15 @@ cd venv/scripts
 
 activate
 
-para salir: debemos usar deactivate
+pip install flask-cors
+
+cd..
+cd..
+
+cd static/scripts
+
+
+
+
+## cerrar venv
+deactivate
