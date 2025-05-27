@@ -17,7 +17,7 @@ cd..
 
 cd static/scripts
 
-
+py iniciar.py
 
 
 ## cerrar venv
