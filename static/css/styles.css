@@ -65,12 +65,3 @@ li{
     margin: none;
     background-color: transparent;
 }
-
-a.button {
-    padding: 1px 6px;
-    border: 1px outset buttonborder;
-    border-radius: 3px;
-    color: white;
-    background-color: black;
-    text-decoration: none;
-}
