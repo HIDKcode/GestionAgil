@@ -65,3 +65,116 @@ li{
     margin: none;
     background-color: transparent;
 }
+
+
+.example-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabla-ensamblaje {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+.tabla-ensamblaje th,
+.tabla-ensamblaje td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 12px;
+}
+
+.tabla-ensamblaje th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.tabla-ensamblaje tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-ensamblaje tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.center {
+  padding: 20px;
+}
+
+.example-box {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabla-inventario {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+.tabla-inventario th,
+.tabla-inventario td {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 12px;
+}
+
+.tabla-inventario th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.tabla-inventario tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tabla-inventario tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.botones button {
+  padding: 8px 16px;           
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-agregar {
+  background-color: #28a745;   
+}
+
+.btn-editar {
+  background-color: #007bff;  
+}
+
+.btn-eliminar {
+  background-color: #dc3545;   
+}
+
+.botones button:hover {
+  opacity: 0.85;               
+}
